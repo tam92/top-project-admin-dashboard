@@ -31,8 +31,8 @@ ul {
 	width: 100vw;
 	height: 100vh;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(5, minmax(150px, 1fr));
+	grid-template-rows: repeat(5, minmax(150px, 1fr));
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -43,10 +43,8 @@ ul {
     font-size: 1.5em;
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
 	grid-column: 1 / 2;
 	grid-row: 1 / 6;
-
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -65,7 +63,6 @@ h1 {
 	background-color: var(--color-50);
 	grid-column: 2 / 6;
 	grid-row: 1 / 2;
-
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 1fr;
@@ -74,15 +71,15 @@ h1 {
 .profile-small {
 	object-fit: cover;
 	border-radius: 50%;
-	height: 50px;
-	width: 50px;
+	height: 40px;
+	width: 40px;
 }
 
 .profile-big {
 	object-fit: cover;
 	border-radius: 50%;
-	height: 80px;
-	width: 80px;
+	height: 60px;
+	width: 60px;
 }
 
 #top-row1 {
@@ -169,21 +166,28 @@ input[type="search"] {
 
 #projectsContainer {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(150px, 400px));
-	gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 25px;
 	padding: 1em;
 }
 
 .card {
     background-color: var(--color-50);
-    border-radius: 4px;
+    border-radius: 8px;
 	padding: 1em;
 }
 
-.cardIcons {
+div .cardIcons {
 	padding-top: 1em;
-	display: grid;
+	display: flex;
 	grid-template-columns: repeat(3, 1fr);
+	justify-content: flex-end;
+}
+
+.cardIcons img {
+	height: 1em;
+	padding-left: 1em;
 }
 
 #announcements {
@@ -191,6 +195,7 @@ input[type="search"] {
 	grid-area: 2 / 5 / 4 / 5;
 	color: var(--color-950);
 	padding: 1em;
+	grid-auto-rows: max-content;
 }
 
 #announcements section {
@@ -215,6 +220,7 @@ hr {
 	grid-area: 4 / 5 / 6 / 6;
 	color: var(--color-950);
 	padding: 1em;
+	grid-auto-rows: max-content;
 }
 
 #trending ul {
@@ -232,4 +238,10 @@ hr {
 	grid-template-rows: 1fr;
 	padding-top: 5px;
 	padding-bottom: 5px;
-} 
+	font-size: 0.9em;
+}
+
+.usertag {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
